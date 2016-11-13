@@ -14,10 +14,7 @@ class PerformStrategyReminders
   private
 
   def ready_for_self_care
-    SelfcareReminder.active.joins(:strategy)
-                    .where(
-                  'strategies.self_care_strategy': one_week_from_now_as_string
-                          )
+    SelfCareStrategyReminder.active.joins(:strategy).where('strategies.self_care_strategy': one_week_from_now_as_string)
   end
 
   def one_week_from_now_as_string

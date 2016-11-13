@@ -14,7 +14,7 @@ namespace :scheduler do
     PerformStrategyReminders.new.send_startegy_reminder_emails
   end
 
-  desc 'Selfcare reminders'
+  desc 'Self-care reminders'
   task send_self_care_strategy_emails: :environment do
     PerformStrategyReminders.new.send_self_care_strategy_emails
   end
