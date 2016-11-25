@@ -12,7 +12,6 @@
 #  updated_at           :datetime
 #  name                 :string
 #  self_care_strategy   :string
-#  daily_reminder_email :boolean
 #
 
 describe Strategy do

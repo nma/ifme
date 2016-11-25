@@ -1,5 +1,6 @@
 class StrategiesController < ApplicationController
   include CollectionPageSetup
+  helper_method :print_reminders
   before_action :set_strategy, only: [:show, :edit, :update, :destroy]
 
   def default_params
@@ -266,7 +267,19 @@ class StrategiesController < ApplicationController
       format.html { redirect_to strategies_path }
       format.json { head :no_content }
     end
+  end
 
+  def print_reminders(strategy)
+    return_this = ''
+    if strategy.active_reminders.any?
+      return_this += '<div class="small_margin_top">'
+      return_this += '<i class="fa fa-bell small_margin_right"></i>'
+      reminder_names = strategy.active_reminders.map(&:name)
+      return_this += reminder_names.to_sentence(two_words_connector: t('support.array.words_connector'))
+      return_this += '</div>'
+    end
+
+    return return_this.html_safe
   end
 
   private

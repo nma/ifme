@@ -19,6 +19,8 @@
   </p>
 <% end %>
 
+<%= print_reminders(@strategy) %>
+
 <%= render :partial => '/shared/viewers_indicator', locals: { data: @strategy } %>
 
 <%= render :partial => '/shared/comments', locals: { data: @strategy, comments: @comments, comment: @comment, no_hide_page: @no_hide_page, comment_type: 'strategy' } %>

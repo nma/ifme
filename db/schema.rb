@@ -175,7 +175,7 @@ ActiveRecord::Schema.define(version: 20161125015132) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
-    t.boolean  "daily_reminder_email"
+    t.string   "self_care_strategy"
   end
 
   create_table "strategy_email_reminders", force: :cascade do |t|
