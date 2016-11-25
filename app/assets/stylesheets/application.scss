@@ -29,8 +29,6 @@
  *= require_self
  */
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
 @import "compass/support";
 @import "compass/utilities";
 @import "base/*";
@@ -611,11 +609,9 @@ label {
 
 .label {
   width: auto;
-  display: initial;
+  display: inherit;
   font-size: $font30;
   margin-bottom: 20px;
-  color: initial;
-  padding: 0;
 
   @media screen and (max-width: $medium) {
     font-size: $font26;
@@ -814,11 +810,6 @@ div.table div.table_cell {
   border: 1px solid $subtle-secondary-text-color !important;
   box-shadow: 0 0 2px $subtle-secondary-text-color inset !important;
   padding: 10px;
-}
-
-td.active.day {
-  background: $secondary-text-color !important;
-  color: $header-text-color !important;
 }
 
 #error_explanation,
