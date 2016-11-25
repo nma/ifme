@@ -2,15 +2,17 @@
 #
 # Table name: strategies
 #
-#  id          :integer          not null, primary key
-#  userid      :integer
-#  category    :text
-#  description :text
-#  viewers     :text
-#  comment     :boolean
-#  created_at  :datetime
-#  updated_at  :datetime
-#  name        :string(255)
+#  id                   :integer          not null, primary key
+#  userid               :integer
+#  category             :text
+#  description          :text
+#  viewers              :text
+#  comment              :boolean
+#  created_at           :datetime
+#  updated_at           :datetime
+#  name                 :string
+#  self_care_strategy   :string
+#  daily_reminder_email :boolean
 #
 
 describe Strategy do
