@@ -56,6 +56,13 @@ export default class ChartControl extends React.Component<chartControlProp, char
 
   render() {
     const { types } = this.props;
+    const additionalProps = {};
+    const data = this.state.data[this.state.type];
+
+    if (window.innerWidth < 680) {
+      additionalProps.height = '200px';
+    }
+
     const buttons: any[] = [];
     _.each(types, (value: string, index: number) => {
       buttons.push(<ChartControlButton
@@ -70,8 +77,9 @@ export default class ChartControl extends React.Component<chartControlProp, char
         <Chart
           ytitle={`${this.state.type}`}
           xtitle="Date"
-          data={this.state.data[this.state.type]}
+          data={data}
           chartType="Area"
+          {...additionalProps}
         />
       </div>
     );

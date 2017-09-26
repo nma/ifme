@@ -31,14 +31,10 @@ export default class Chart extends React.Component<chartShape, {}> {
         <div>
           {this.props.chartType === 'Line' ?
             <LineChart
-              xtitle={this.props.xtitle}
-              ytitle={this.props.ytitle}
-              data={this.props.data}
+              {...this.props}
               colors={colorSchemes}
             /> : <AreaChart
-              xtitle={this.props.xtitle}
-              ytitle={this.props.ytitle}
-              data={this.props.data}
+              {...this.props}
               colors={colorSchemes}
             />}
 
